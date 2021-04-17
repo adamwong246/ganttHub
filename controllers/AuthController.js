@@ -2,13 +2,11 @@ var mongoose = require("mongoose");
 var passport = require("passport");
 var User = require("../models/User");
 
-const fakeData = require("../fakeResponse.json")
-
 var userController = {};
 
 // Restrict access to root page
 userController.home = function(req, res) {
-  res.render('index', { user : req.user, fakeData });
+  res.render('index', { user : req.user });
 };
 
 // Go to registration page

@@ -47,7 +47,7 @@ app.use(express.static('dist'));
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/jobs', jobsRoutes);
+// app.use('/jobs', jobsRoutes);
 
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
