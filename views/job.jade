@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1
+    |Job #
+    = job._id
+  h2
+    |status: 
+    = job.status
+  a(href='/' + job.filepath.split('/').slice(2)[0])= job.filepath.split('/').slice(2)[0]
+
+  pre= JSON.stringify(job, null, 2)
+
+  

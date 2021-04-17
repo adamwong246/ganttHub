@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 All Jobs
+
+  form(action="/jobs" method="post")
+    label label/uid
+    input(type=text name="label" value="ABCDEF012345670000000001")
+
+    //- label template
+    //- input(type=text)
+    
+    label Number of iterations
+    input(type=number name="iterations" value="10")
+
+    button(type="submit") submit
+
+  ul 
+    each job in jobs
+      li
+        a(href=`/jobs/${job.id}`)= `/jobs/${job.id} (status: ${job.status})`

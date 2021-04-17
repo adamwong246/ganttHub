@@ -1,0 +1,38 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    nav
+      h1
+        a(href='/') Chroma Signet Labelizer
+      
+      ul
+        if (user)
+          li
+            | Welcome 
+            a(href="/users/home") #{user.name}.
+            | 
+            a(href='/logout') Logout
+
+        if (!user)
+          li
+            form(role='form', action='/login', method='post')
+              input(type='text', name='username', id='inputEmail', placeholder='Username', required, autofocus, value="adam") 
+              input(type='password', name='password', id='inputPassword', placeholder='Password', value="adam") 
+              button(type='submit') LOGIN
+            </br> 
+            a(href='/register') Register
+
+        else
+          li
+            a(href="/users/allUsers") All users
+          li
+            a(href="/jobs") All jobs
+
+
+
+    div.container
+      div.content
+        block content
